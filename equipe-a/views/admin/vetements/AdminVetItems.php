@@ -11,8 +11,8 @@
      </form>
      </div>
  </div>
-  <table class="table table-striped">
-      <thead class="bg-dark text-white">
+  <table class="table table-striped text-center mt-3">
+      <thead class="bg-dark text-white ">
           <tr>
               <th>Id</th>
               <th>Modèle</th>

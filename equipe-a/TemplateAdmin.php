@@ -17,6 +17,24 @@
  
 
   <a href="index.php?action=logout"><i class="fas fa-power-off"></i> Déconnexion</a>
+
+  <button class="dropdown-btn"><i class="fas fa-book-open"></i> Catalogue
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="index.php?action=add_cat"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="index.php?action=list_cat"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
+  </div>
+
+  <button class="dropdown-btn"><i class="far fa-newspaper"></i> Actualités
+
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="index.php?action=add_vet"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="index.php?action=list_vet"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
+  </div>
+
   <button class="dropdown-btn"><i class="fa fa-list-alt"></i> Catégorie
     <i class="fa fa-caret-down"></i>
   </button>
@@ -33,6 +51,8 @@
     <a href="index.php?action=add_vet"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
     <a href="index.php?action=list_vet"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
+
+
 
   <button class="dropdown-btn"><i class="fa fa-user-tag"></i> Grade
     <i class="fa fa-caret-down"></i>

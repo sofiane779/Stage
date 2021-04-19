@@ -2,8 +2,8 @@
 
  <div class="container">
      <div class="row">
-         <div class="col-6 offset-3">
-         <h1 class="display-6 text-center font-monospace text-decoration-underline mt-3 mb-3 fw-bold">Ajout d'une catégorie</h1>
+         <div class="col-6 offset-3 fw-bold">
+         <h1 class="display-6 text-center text-decoration-underline mt-3 mb-3 fw-bold">Ajout d'une catégorie</h1>
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
                 
                  <label for="categorie">Catégorie</label>

@@ -1,9 +1,9 @@
 <?php ob_start();?>
 
  <div class="container">
- <h1 class="text-center mt-3 mb-3 fw-bold">Modification de Categorie</h1>
+ <h1 class="text-center mt-3 mb-3 fw-bold text-decoration-underline">Modification de Categorie</h1>
      <div class="row">
-         <div class="col-6 offset-3">
+         <div class="col-6 offset-3 fw-bold">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
                 <label for="">Identifiant</label>
                  <input type="text" class="form-control"  value="<?=$cat->getId_cat();?>" readonly>
