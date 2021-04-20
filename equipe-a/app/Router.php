@@ -19,6 +19,7 @@ require_once('./models/Categories.php');
 
      private $ctrca;
      private $ctrv;
+     private $ctrcat;
 //     private $ctru;
 //     private $ctrg;
 //     private $ctrpub;
@@ -26,7 +27,8 @@ require_once('./models/Categories.php');
      public function __construct()
    {
         $this->ctrca = new AdminCategoriesController();
-         $this->ctrv = new AdminShopController();
+        $this->ctrv = new AdminShopController();
+        $this->ctrcat = new AdminCatArtController();
 //         $this->ctru = new AdminUtilisateurController();
 //         $this->ctrg = new AdminGradeController();
 //         $this->ctrpub = new PublicController();
@@ -61,6 +63,18 @@ require_once('./models/Categories.php');
                         break;
                     case 'edit_vet':
                         $this->ctrv->editVetement();
+                        break;
+                    case 'list_cat_art':
+                        $this->ctrcat->listCatArt();
+                        break;
+                    case 'delete_cat_art':
+                        $this->ctrcat->removeCatArt();
+                        break;
+                    case 'edit_cat_art':
+                        $this->ctrcat->editCatArt();
+                        break;
+                    case 'add_cat_art':
+                        $this->ctrcat->addCatArt();
                         break;
                     // case 'list_u':
                     //     $this->ctru->listUsers();

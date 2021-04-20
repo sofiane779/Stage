@@ -22,8 +22,8 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=add_cat"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
-    <a href="index.php?action=list_cat"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
+    <a href="index.php?action=add_cat_art"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="index.php?action=list_cat_art"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
   <button class="dropdown-btn"><i class="far fa-newspaper"></i> Actualités
