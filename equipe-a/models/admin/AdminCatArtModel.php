@@ -13,7 +13,7 @@ class AdminCatArtModel extends Driver{
         $tabCatArt = [];
 
         foreach($rows as $row){
-            $catart = new Cat_art();
+            $catart = new CatArt();
             $catart->setId_cat_art($row->id_cat_art);
             $catart->setNom_cat_art($row->nom_cat_art);
             array_push($tabCatArt, $catart);
@@ -37,7 +37,7 @@ class AdminCatArtModel extends Driver{
 
             $row = $result->fetch(PDO::FETCH_OBJ);
 
-            $catart = new Cat_art();
+            $catart = new CatArt();
             $catart->setId_cat_art($row->id_cat_art);
             $catart->setNom_cat_art($row->nom_cat_art);
             
@@ -45,7 +45,7 @@ class AdminCatArtModel extends Driver{
         }
     }
 
-    public function updateCatArt(Cat_art $catart){
+    public function updateCatArt(CatArt $catart){
 
         $sql = "UPDATE cat_art
                 SET nom_cat_art = :nom
@@ -59,12 +59,12 @@ class AdminCatArtModel extends Driver{
         }
     }
 
-    public function insertCatArt(Cat_art $catart){
+    public function insertCatArt(CatArt $catart){
 
         $sql = "INSERT INTO cat_art(nom_cat_art)
                 VALUES (:nom)";
         $result = $this->getRequest($sql, array('nom'=>$catart->getNom_cat_art()));
-        
+
         return $result;
     }
 }

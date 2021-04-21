@@ -1,6 +1,6 @@
 <?php
 
-class Cat_art{
+class CatArt{
 
     private $id_cat_art;
     private $nom_cat_art;

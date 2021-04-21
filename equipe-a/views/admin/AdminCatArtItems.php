@@ -1,11 +1,10 @@
-categories
 <?php ob_start();?>
-    <table class="table table-striped">
+    <table class="table table-striped text-center">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nom</th>
-                <th colspan="2" class="text-center">Action</th>
+                <th colspan="2" class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -14,7 +13,7 @@ categories
                 <td><?= $catart->getId_cat_art();?></td>
                 <td><?= $catart->getNom_cat_art();?></td>
                 <td class="text-center">
-                    <a class="btn btn-success" href="index.php?action=edit_cat_art&id=<?= $catart->getId_cat_art();?>">
+                    <a class="btn btn-warning" href="index.php?action=edit_cat_art&id=<?= $catart->getId_cat_art();?>">
                     <i class="fas fa-pen"></i></a>
                 </td>
                 <!-- <?php if($_SESSION['Auth']->id_g !=3){ ?> -->
@@ -27,9 +26,7 @@ categories
             </tr>
             <?php }?>
         </tbody>
-    </table>
-    
- 
+    </table> 
  <?php
     $contenu = ob_get_clean();
     require_once('./TemplateAdmin.php');

@@ -20,6 +20,7 @@ require_once('./models/Categories.php');
      private $ctrca;
      private $ctrv;
      private $ctrcat;
+     private $ctrart;
 //     private $ctru;
 //     private $ctrg;
 //     private $ctrpub;
@@ -29,6 +30,7 @@ require_once('./models/Categories.php');
         $this->ctrca = new AdminCategoriesController();
         $this->ctrv = new AdminShopController();
         $this->ctrcat = new AdminCatArtController();
+        $this->ctrart = new AdminArticlesController();
 //         $this->ctru = new AdminUtilisateurController();
 //         $this->ctrg = new AdminGradeController();
 //         $this->ctrpub = new PublicController();
@@ -75,6 +77,18 @@ require_once('./models/Categories.php');
                         break;
                     case 'add_cat_art':
                         $this->ctrcat->addCatArt();
+                        break;
+                    case 'list_art':
+                        $this->ctrart->listArticles();
+                        break;
+                    case 'add_art':
+                        $this->ctrart->addArticle();
+                        break;
+                    case 'delete_art':
+                        $this->ctrart->removeArticle();
+                        break;
+                    case 'edit_art':
+                        $this->ctrart->editArticle();
                         break;
                     // case 'list_u':
                     //     $this->ctru->listUsers();

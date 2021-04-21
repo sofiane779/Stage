@@ -56,7 +56,7 @@ class AdminCatArtController{
         if(isset($_POST['soumis']) && !empty($_POST['categorie'])){
 
             $nom_cat_art = trim(htmlentities(addslashes($_POST['categorie'])));
-            $newCatArt = new Cat_art();
+            $newCatArt = new CatArt();
             $newCatArt->setNom_cat_art($nom_cat_art);
 
             $ok = $this->adCatArt->insertCatArt($newCatArt);
