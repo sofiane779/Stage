@@ -16,13 +16,13 @@
                     <a class="btn btn-warning" href="index.php?action=edit_cat_art&id=<?= $catart->getId_cat_art();?>">
                     <i class="fas fa-pen"></i></a>
                 </td>
-                <!-- <?php if($_SESSION['Auth']->id_g !=3){ ?> -->
+                 <?php if($_SESSION['Auth']->id_g !=3){ ?> 
                 <td class="text-center">
                     <a class="btn btn-danger" href="index.php?action=delete_cat_art&id=<?= $catart->getId_cat_art();?>" 
                     onclick="return confirm('Etes vous sûr de vouloir supprimer ?')">
                     <i class="fas fa-trash"></i></a>
                 </td>
-                <!-- <?php } ?> -->
+                 <?php } ?> 
             </tr>
             <?php }?>
         </tbody>

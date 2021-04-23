@@ -10,14 +10,15 @@ class AdminCatArtController{
     }
 
     public function listCatArt(){
-
+        // AuthController::isLogged();
         $allCatArt = $this->adCatArt->getCatArt();
         require_once('./views/admin/AdminCatArtItems.php');
         return $allCatArt;
     }
 
     public function removeCatArt(){
-
+        // AuthController::isLogged();
+        // AuthController::accessUser();
         if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
 
             $id = trim($_GET['id']);
@@ -31,7 +32,7 @@ class AdminCatArtController{
     }
 
     public function editCatArt(){
-
+        // AuthController::isLogged();
         if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
 
             $id = trim($_GET['id']);
@@ -52,7 +53,7 @@ class AdminCatArtController{
     }
 
     public function addCatArt(){
-
+        // AuthController::isLogged();
         if(isset($_POST['soumis']) && !empty($_POST['categorie'])){
 
             $nom_cat_art = trim(htmlentities(addslashes($_POST['categorie'])));

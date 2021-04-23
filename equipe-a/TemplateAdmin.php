@@ -14,7 +14,7 @@
   <div class="text-center text-white mb-3">
     <img src="./assets/images/eablanc.png" alt="" width="150">
   </div>
- 
+
 
   <a href="index.php?action=logout"><i class="fas fa-power-off"></i> Déconnexion</a>
 
@@ -67,7 +67,7 @@
   </button>
   <div class="dropdown-container">
     <!-- <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a> -->
-   
+
     <a href="index.php?action=register"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
 
     <!-- <a href="index.php?action=login"><i class="fas fa-key"></i> Connexion</a> -->

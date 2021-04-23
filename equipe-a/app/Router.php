@@ -21,8 +21,8 @@ require_once('./models/Categories.php');
      private $ctrv;
      private $ctrcat;
      private $ctrart;
-//     private $ctru;
-//     private $ctrg;
+     private $ctru;
+     private $ctrg;
 //     private $ctrpub;
 
      public function __construct()
@@ -30,11 +30,12 @@ require_once('./models/Categories.php');
         $this->ctrca = new AdminCategoriesController();
         $this->ctrv = new AdminShopController();
         $this->ctrcat = new AdminCatArtController();
-        $this->ctrart = new AdminArticlesController();
-//         $this->ctru = new AdminUtilisateurController();
-//         $this->ctrg = new AdminGradeController();
+        $this->ctrart = new AdminArticlesController();     
+        $this->ctru = new AdminUtilisateurController();
+        $this->ctrg = new AdminGradeController();
+       }   
 //         $this->ctrpub = new PublicController();
-     }
+    
 
      public function getPath(){
 
@@ -90,21 +91,21 @@ require_once('./models/Categories.php');
                     case 'edit_art':
                         $this->ctrart->editArticle();
                         break;
-                    // case 'list_u':
-                    //     $this->ctru->listUsers();
-                    //     break;
-                    // case 'login':
-                    //     $this->ctru->login();
-                    //     break;
-                    // case 'logout':
-                    //     // AuthController::logout();
-                    //     break;
+                    case 'list_u':
+                        $this->ctru->listUsers();
+                        break;
+                    case 'login':
+                        $this->ctru->login();
+                        break;
+                    case 'logout':
+                        AuthController::logout();
+                        break;
                     // case 'register':
                     //     $this->ctru->addUser();
                     //     break;
-                    // case 'list_g':
-                    //     $this->ctrg ->listGrades();
-                    //     break;   
+                    case 'list_g':
+                        $this->ctrg->listGrades();
+                        break;   
                     // case 'checkout':
                     //     $this->ctrpub ->recap();
                     //     break; 

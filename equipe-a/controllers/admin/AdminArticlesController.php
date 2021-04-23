@@ -11,7 +11,7 @@ class AdminArticlesController{
     }
 
     public function listArticles(){
-
+        // AuthController::isLogged();
         if(isset($_POST['soumis']) && !empty($_POST['search'])){
 
             $search = trim(htmlspecialchars(addslashes($_POST['search'])));
@@ -24,7 +24,7 @@ class AdminArticlesController{
     }
 
     public function addArticle(){
-
+        // AuthController::isLogged();
         if(isset($_POST['soumis']) && !empty($_POST['titre']) && !empty($_POST['contenu'])){
 
             $titre = trim(htmlentities(addslashes($_POST['titre'])));
@@ -55,7 +55,8 @@ class AdminArticlesController{
     }
 
     public function removeArticle(){
-
+        // AuthController::isLogged();
+        // AuthController::accessUser();
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
 
             $id = $_GET['id'];
@@ -70,7 +71,7 @@ class AdminArticlesController{
     }
 
     public function editArticle(){
-
+        // AuthController::isLogged();
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
 
             $id = $_GET['id'];
