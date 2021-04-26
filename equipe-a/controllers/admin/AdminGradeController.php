@@ -10,14 +10,14 @@ class AdminGradeController{
     }
 
     public function listGrades(){
-        //  AuthController::isLogged();
+         AuthController::isLogged();
          $allGrades = $this->adG->getGrades();
          require_once('./views/admin/grades/AdminGradesItems.php');
     }
 
     public function removeGrade(){
-        //  AuthController::isLogged();
-        //  AuthController::accessUser();
+         AuthController::isLogged();
+         AuthController::accessUser();
         if(isset($_GET['id'])  && filter_var($_GET['id'],FILTER_VALIDATE_INT)){
 
             $id = trim($_GET['id']);

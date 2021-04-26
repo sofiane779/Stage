@@ -24,7 +24,7 @@
               <td><?=$user->getLogin();?></td>
               <td><?=$user->getEmail();?></td>
               <td><?=$user->getGrade()->getNom_g();?></td>
-
+              <?php if($_SESSION['Auth']->id_g == 1){ ?>
               <td class="text-center">
                 <!-- <a class="btn btn-success" href="">
                     <i class="fas "></i> 
@@ -39,7 +39,7 @@
                 <?php } ?>  
               
           </tr>
-
+          <?php } ?>
       </tbody>
   </table>
   

@@ -11,7 +11,7 @@ class AdminShopController{
     }
 
     public function listVetements(){
-        // AuthController::isLogged();
+        AuthController::isLogged();
         if(isset($_POST['soumis']) && !empty($_POST['search'])){
 
             $search = trim(htmlspecialchars(addslashes($_POST['search'])));
@@ -26,7 +26,7 @@ class AdminShopController{
     }
 
     public function addVetements(){
-        // AuthController::isLogged();
+        AuthController::isLogged();
         if(isset($_POST['soumis']) && !empty($_POST['modele']) && !empty($_POST['prix'])){
 
             $modele = trim(htmlspecialchars(addslashes($_POST['modele'])));
@@ -62,8 +62,8 @@ class AdminShopController{
     }
 
     public function removeVetement(){
-        // AuthController::isLogged();
-        // AuthController::accessUser();
+        AuthController::isLogged();
+        AuthController::accessUser();
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
 
             $id = $_GET['id'];
@@ -78,7 +78,7 @@ class AdminShopController{
     }
 
     public function editVetement(){
-        // AuthController::isLogged();
+        AuthController::isLogged();
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
 
             $id = $_GET['id'];

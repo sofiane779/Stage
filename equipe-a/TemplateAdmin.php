@@ -14,7 +14,7 @@
   <div class="text-center text-white mb-3">
     <img src="./assets/images/eablanc.png" alt="" width="150">
   </div>
-
+  <?php if(isset($_SESSION['Auth'])){ ?>
 
   <a href="index.php?action=logout"><i class="fas fa-power-off"></i> Déconnexion</a>
 
@@ -51,7 +51,7 @@
     <a href="index.php?action=add_vet"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
     <a href="index.php?action=list_vet"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
-
+  <?php if($_SESSION['Auth']->id_g  != 3){ ?>
 
 
   <button class="dropdown-btn"><i class="fa fa-user-tag"></i> Grade
@@ -67,14 +67,14 @@
   </button>
   <div class="dropdown-container">
     <!-- <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a> -->
-
+    <?php if($_SESSION['Auth']->id_g  == 1){ ?>
     <a href="index.php?action=register"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
-
+    <?php } ?>
     <!-- <a href="index.php?action=login"><i class="fas fa-key"></i> Connexion</a> -->
     <a href="index.php?action=list_u"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
   <a href="#contact">Search</a>
-
+  <?php }} ?>
 </div>
 <div class="main">
   <h1 class="bg-secondary text-center text-white">ADMINISTRATION</h1>

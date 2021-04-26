@@ -23,7 +23,7 @@ require_once('./models/Categories.php');
      private $ctrart;
      private $ctru;
      private $ctrg;
-//     private $ctrpub;
+     private $ctrpub;
 
      public function __construct()
    {
@@ -33,8 +33,9 @@ require_once('./models/Categories.php');
         $this->ctrart = new AdminArticlesController();     
         $this->ctru = new AdminUtilisateurController();
         $this->ctrg = new AdminGradeController();
+        // $this->ctrpub = new PublicController();
        }   
-//         $this->ctrpub = new PublicController();
+        
     
 
      public function getPath(){
@@ -100,9 +101,9 @@ require_once('./models/Categories.php');
                     case 'logout':
                         AuthController::logout();
                         break;
-                    // case 'register':
-                    //     $this->ctru->addUser();
-                    //     break;
+                    case 'register':
+                        $this->ctru->addUser();
+                        break;
                     case 'list_g':
                         $this->ctrg->listGrades();
                         break;   

@@ -13,7 +13,7 @@ class AdminUtilisateurController{
     }
 
     public function listUsers(){
-        // AuthController::isLogged();
+        AuthController::isLogged();
         if(isset($_GET['id']) && isset($_GET['statut']) && !empty($_GET['id'])){
             $id = $_GET['id'];
             $statut = $_GET['statut'];
@@ -37,7 +37,7 @@ class AdminUtilisateurController{
 
         
         if(isset($_POST['soumis'])){
-            if(strlen($_POST['pass']) >= 4 && !empty($_POST['loginEmail'])){
+            if(!empty($_POST['loginEmail'])){
                 $loginEmail = trim(htmlentities(addslashes($_POST['loginEmail'])));
                 $pass = md5(trim(htmlentities(addslashes($_POST['pass']))));
                 $data_u = $this->adUser->signIn($loginEmail,  $pass);
@@ -64,7 +64,7 @@ class AdminUtilisateurController{
 
     public function addUser(){
         if(isset($_POST['soumis'])){
-            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && strlen($_POST['pass']) >= 4){
+            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
                 $nom = trim(htmlentities(addslashes($_POST['nom'])));
                 $prenom = trim(htmlentities(addslashes($_POST['prenom'])));
                 $email = trim(htmlentities(addslashes($_POST['email'])));

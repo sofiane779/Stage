@@ -15,11 +15,11 @@
              <td><?=$grade->getId_g()?></td>
              <td><?=$grade->getNom_g()?></td>
              <td><a class="btn btn-warning" href=""><i class="fas fa-edit" aria-hidden="true"></i></a></td>
-         
+          <?php if($_SESSION['Auth']->id_g != 3 ){ ?>
              <td><a class="btn btn-danger" href=""><i class="fas fa-trash" aria-hidden="true"></i></a></td>
              <?php } ?> 
           </tr>
-    
+          <?php } ?>
       </tbody>
   </table>
   
