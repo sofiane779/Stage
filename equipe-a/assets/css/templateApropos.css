@@ -1,0 +1,28 @@
+.title-about{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.text-about{
+    font-size: 25px;
+    font-style: oblique;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-align: justify;
+    line-height: 1.7em;
+    
+}
+#ab_img{
+    float: left;
+    margin: 0;
+    border-radius: 50%;
+    shape-outside: circle();
+    margin: 20px;
+}
+strong{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}

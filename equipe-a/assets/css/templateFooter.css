@@ -1,0 +1,18 @@
+.fab{
+   font-size: xx-large;
+    padding: 8px;
+    margin-right: 6px;
+}  
+.contenu{
+    background-color: whitesmoke;
+}
+.nav-item{
+    font-size: 20px;
+    padding-left: 24px;
+}
+#ftco-nav a {
+    color: white;
+}
+#ftco-nav a:hover{
+    color: #0078BB;
+}

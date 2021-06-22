@@ -1,0 +1,28 @@
+.title-contact{
+    color: #2A262B;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.contact{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 90px;
+    margin-bottom: 100px;
+    font-size: x-large;
+    font-weight: bold;
+   
+}
+.contact i{
+    color: #005B8D;
+    font-size: 48px;
+    text-align-last: center;
+}
+.dit{
+    margin-top: 30px;
+}
+.par{
+    margin-top: 15px;
+    font-size: xx-large;
+}

@@ -11,10 +11,17 @@
 
 <div class="sidenav">
   
-  <div class="text-center text-white mb-3">
+  <div class="text-center text-white mb-2">
+  <a href="index.php">
     <img src="./assets/images/eablanc.png" alt="" width="150">
+</a>
   </div>
-  <?php if(isset($_SESSION['Auth'])){ ?>
+
+<h2 class="text-center text-white mb-1">
+    <?php if (isset($_SESSION['Auth']))
+        echo $_SESSION['Auth']->nom;
+      ?>
+    </h2>
 
   <a href="index.php?action=logout"><i class="fas fa-power-off"></i> Déconnexion</a>
 
@@ -58,7 +65,6 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <!-- <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a> -->
     <a href="index.php?action=list_g"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
@@ -66,15 +72,13 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <!-- <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a> -->
     <?php if($_SESSION['Auth']->id_g  == 1){ ?>
     <a href="index.php?action=register"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
     <?php } ?>
-    <!-- <a href="index.php?action=login"><i class="fas fa-key"></i> Connexion</a> -->
     <a href="index.php?action=list_u"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
-  <a href="#contact">Search</a>
-  <?php }} ?>
+  
+  <?php } ?>
 </div>
 <div class="main">
   <h1 class="bg-secondary text-center text-white">ADMINISTRATION</h1>

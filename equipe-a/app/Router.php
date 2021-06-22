@@ -2,19 +2,8 @@
 
 require_once('./models/Driver.php');
 require_once('./models/Categories.php');
-// // require_once('./models/Voiture.php');
-// // require_once('./models/Grade.php');
-// // require_once('./models/Utilisateurs.php');
-// // require_once('./models/admin/AdminCategorieModel.php');
-// // require_once('./controllers/admin/AdminCategorieController.php');
-// // require_once('./models/admin/AdminVoitureModel.php');
-// // require_once('./controllers/admin/AdminVoitureController.php');
-// // require_once('./models/admin/AdminUtilisateurModel.php');
-// // require_once('./controllers/admin/AdminUtilisateurController.php');
-// // require_once('./models/admin/AdminGradeModel.php');
-// // require_once('./controllers/admin/AdminGradeController.php');
-// // require_once('./controllers/admin/AuthController.php');
- require_once('./app/autoload.php');
+require_once('./app/autoload.php');
+
  class Router{
 
      private $ctrca;
@@ -24,6 +13,7 @@ require_once('./models/Categories.php');
      private $ctru;
      private $ctrg;
      private $ctrpub;
+     private $ctrpubsp;
 
      public function __construct()
    {
@@ -33,14 +23,15 @@ require_once('./models/Categories.php');
         $this->ctrart = new AdminArticlesController();     
         $this->ctru = new AdminUtilisateurController();
         $this->ctrg = new AdminGradeController();
-        // $this->ctrpub = new PublicController();
+        $this->ctrpub = new ArticlesController();
+        $this->ctrpubsp = new ShopController();
        }   
         
     
 
      public function getPath(){
 
-        //  try{
+          try{
             if(isset($_GET['action'])){
 
                 switch($_GET['action']){
@@ -104,15 +95,24 @@ require_once('./models/Categories.php');
                     case 'register':
                         $this->ctru->addUser();
                         break;
-                    case 'list_g':
-                        $this->ctrg->listGrades();
+                    case 'accueil':
+                        $this->ctrpubsp->accueil();
+                        break;
+                    case 'articles':
+                        $this->ctrpub->getPubArticles();
+                        break;
+                    case 'shop':
+                        $this->ctrpubsp->getPubShop();
                         break;   
-                    // case 'checkout':
-                    //     $this->ctrpub ->recap();
-                    //     break; 
-                    // case 'order' :
-                    //     $this->ctrpub ->orderOrdi();
-                    //     break;
+                    case 'shop':
+                        $this->ctrpubsp->getPubShop();
+                        break;    
+                    case 'checkout':
+                        $this->ctrpubsp->recap();
+                        break; 
+                    case 'order' :
+                        $this->ctrpubsp ->orderShop();
+                        break;
                     // case 'pay':
                     //     $this->ctrpub->payement();
                     //     break;
@@ -122,12 +122,21 @@ require_once('./models/Categories.php');
                     // case 'cancel':
                     //     $this->ctrpub->annuler();
                     //     break;
-                    // case 'apropos':
-                    //     $this->ctrpub->apropos();
-                    //     break;
-                    // case 'contact':
-                    //     $this->ctrpub->contact();
-                    //     break;
+                    case 'apropos':
+                        $this->ctrpubsp->apropos();
+                        break;
+                    case 'contact':
+                        $this->ctrpubsp->contact();
+                        break;
+                    case 'confidentialite':
+                        $this->ctrpubsp->confid();
+                        break;
+                    case 'cart':
+                        $this->ctrpubsp->addToCart();
+                        break; 
+                    case 'remove_cart':
+                        $this->ctrpubsp->deleteCart();
+                        break;
                     // case 'validate':
                     //     $this->ctrpub->validate();
                     //     break;
@@ -135,18 +144,18 @@ require_once('./models/Categories.php');
                     //     throw new Exception('Action non définie');
                 }     
              }
-            // else{
-            //     $this->ctrpub->getPubOrdinateurs();
-            //     session_unset();
-            //     }
-//         }catch(Exception $e){
-//             $this->page404($e->getMessage());
-//          }
-//     }
+            else{
+                $this->ctrpubsp->accueil();
+                session_unset();
+                }
+        }catch(Exception $e){
+            $this->page404($e->getMessage());
+         }
+    }
 
-//    private function page404($errorMsg){
+   private function page404($errorMsg){
 
-//          require_once('./views/notFound.php');
+         require_once('./views/notFound.php');
  
    }
  }
